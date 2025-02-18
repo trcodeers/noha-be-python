@@ -1,5 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_socketio import SocketIO
+import logging
+
+logging.basicConfig(level=logging.DEBUG)  # Ensure logs are visible
+logger = logging.getLogger(__name__)
+
 
 app = Flask(__name__)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -9,7 +14,7 @@ guest_namespace = '/guest'
 
 @socketio.on('connect', namespace=guest_namespace)
 def handle_connect():
-    print(f"A guest connected: {request.sid}")   
+    logger.info(f"A guest connected: {request.sid}")
 
 @socketio.on('audioStream', namespace=guest_namespace)
 def handle_audio_stream(audio_chunk):
