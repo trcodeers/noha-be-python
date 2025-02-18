@@ -1,0 +1,39 @@
+# Bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+/venv
+env/
+
+# Ignore environment variables & secrets
+.env
+*.env
+config.py
+
+# Logs and database
+logs/
+*.log
+instance/
+*.sqlite3
+*.db
+
+# VS Code settings
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# Python dependencies
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebook checkpoints (if used)
+.ipynb_checkpoints/
+
+# Docker & Deployment
+*.dockerfile
+*.pid
+*.sock
